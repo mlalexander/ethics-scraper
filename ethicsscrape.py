@@ -25,9 +25,9 @@ for tr in lobbyists.findAll('tr'):
     output_row = []
 
     for td in tr.findAll('td')[1:]:
-        data = td.text.replace('&nbsp;', '')
-        output_row.append(data)
+        row_list = td.text.replace('&nbsp;', '')
 
-    output.append(output_row)
+        output_row.append(row_list)
 
-print output
+        if "Columbia" in row_list:
+            print output_row
